@@ -4,6 +4,7 @@
     "target": "ESNext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
+    "baseUrl": "src",
     "jsx": "react-jsx"
   },
   "include": ["src"]

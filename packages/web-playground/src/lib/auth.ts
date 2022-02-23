@@ -1,22 +1,24 @@
-import { AppConfig, UserSession, UserData } from '@stacks/auth'
-import { Person } from '@stacks/profile'
+// import { AppConfig, UserSession, UserData } from '@stacks/auth'
+// import { Person } from '@stacks/profile'
 
-const appConfig = new AppConfig(['store_write', 'publish_data'])
+// const appConfig = new AppConfig(['store_write', 'publish_data'])
 
-export const userSession = new UserSession({ appConfig })
+// export const userSession = new UserSession({ appConfig })
+export const userSession = {}
 
 export function authenticate() {
-  console.warn('no')
+  // console.warn('no')
 }
 
-export function getUserData(): UserData {
-  return userSession.loadUserData()
-}
+// export function getUserData(): UserData {
+//   return userSession.loadUserData()
+// }
 
-export function getPerson(): Person {
-  return new Person(getUserData().profile)
-}
+// export function getPerson(): Person {
+//   return new Person(getUserData().profile)
+// }
 
 export function signOut() {
-  return userSession.signUserOut()
+  // return userSession.signUserOut()
+  // console.warn('signing out...')
 }

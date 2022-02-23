@@ -6,7 +6,7 @@ module.exports = {
   webpack: {
     configure: {
       plugins: [
-        new NodePolyfillPlugin(),
+        new NodePolyfillPlugin({ excludeAliases: ['console'] }),
         new webpack.ProvidePlugin({
           Buffer: ['buffer', 'Buffer'],
         }),
@@ -14,7 +14,7 @@ module.exports = {
       resolve: {
         fallback: {
           stream: require.resolve('stream-browserify'),
-          console: require.resolve('console-browserify'),
+          // console: require.resolve('console-browserify'),
           buffer: require.resolve('buffer'),
           crypto: require.resolve('crypto-browserify'),
         },

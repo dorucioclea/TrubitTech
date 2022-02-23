@@ -34,7 +34,7 @@
     "react": "*",
     "react-activity": "^2.1.1",
     "react-dom": "*",
-    "react-router-dom": "^6.2.1",
+    "react-router-dom": "6",
     "react-scripts": "*",
     "react-select": "^5.2.1",
     "socket.io-client": "^4.4.0",
@@ -51,6 +51,7 @@
     "typescript": "*"
   },
   "scripts": {
+    "new:feature": "yarn dlx hygen feature new",
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",

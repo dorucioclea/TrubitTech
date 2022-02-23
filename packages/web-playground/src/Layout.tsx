@@ -2,6 +2,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import { Menu, Transition } from '@headlessui/react'
+
 import { IS_MAINNET } from './lib/constants'
 import { signOut } from './lib/auth'
 
