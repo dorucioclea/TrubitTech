@@ -4356,6 +4356,7 @@ __metadata:
   dependencies:
     "@types/node": ^17.0.17
     "@types/webpack": ^5.28.0
+    inflection: ^1.13.2
     ts-node: ^10.5.0
     tslib: ^2.3.1
     typescript: ^4.5.5
@@ -4416,7 +4417,7 @@ __metadata:
     react: "*"
     react-activity: ^2.1.1
     react-dom: "*"
-    react-router-dom: ^6.2.1
+    react-router-dom: 6
     react-scripts: "*"
     react-select: ^5.2.1
     socket.io-client: ^4.4.0
@@ -10006,6 +10007,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"inflection@npm:^1.13.2":
+  version: 1.13.2
+  resolution: "inflection@npm:1.13.2"
+  checksum: e7ad0559384ed7c526813404bde843f8f17941d47625ad60fc3b09e46efde873dd9840818007c6bd4dbe388e6248fa033d5a8c405c5fc62738c51b118a0e940f
+  languageName: node
+  linkType: hard
+
 "inflight@npm:^1.0.4":
   version: 1.0.6
   resolution: "inflight@npm:1.0.6"
@@ -13899,7 +13907,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router-dom@npm:^6.2.1":
+"react-router-dom@npm:6":
   version: 6.2.1
   resolution: "react-router-dom@npm:6.2.1"
   dependencies:
