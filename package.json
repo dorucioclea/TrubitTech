@@ -31,6 +31,9 @@
   "devDependencies": {
     "@types/node": "^17.0.17",
     "@types/webpack": "^5.28.0",
+    "find-root": "^1.1.0",
+    "flatten": "^1.0.3",
+    "glob": "^7.2.0",
     "inflection": "^1.13.2",
     "ts-node": "^10.5.0",
     "tslib": "^2.3.1",

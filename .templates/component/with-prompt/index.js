@@ -1,4 +1,3 @@
-const inflection = require('inflection')
 const path = require('path')
 const findRoot = require('find-root')
 const flatten = require('flatten')
@@ -25,11 +24,6 @@ function getWorkspaces(from) {
   })
 
   const packages = getPackages(require(path.join(root, 'package.json')))
-  console.info(
-    packages.map((p) => {
-      console.log('package:\n', p)
-    }),
-  )
   const flattened = flatten(
     packages.map((name) =>
       // The trailing / ensures only dirs are picked up
@@ -41,18 +35,33 @@ function getWorkspaces(from) {
 }
 
 module.exports = {
-  templates: path.resolve(__dirname, '.templates'),
-  helpers: {
-    inflection,
-    componentCase: inflection.classify,
-    workspaces: getWorkspaces(__dirname).workspaces,
-    packages: getWorkspaces(__dirname).packages,
-    paths: {
-      components: path.resolve(
-        __dirname,
-        'packages/web-playground/src/components',
+  prompt: ({ prompter, args }) =>
+    prompter
+      .prompt({
+        type: 'select',
+        name: 'package',
+        message: 'Which package should this be generated in?',
+        choices: getWorkspaces(path.resolve(__dirname, '../..')).packages,
+      })
+      .then(({ package }) =>
+        prompter.prompt({
+          type: 'input',
+          name: 'component',
+          message: `What should we call this new ${package} component?`,
+        }),
       ),
-      features: path.resolve(__dirname, 'packages/web-playground/src/features'),
-    },
-  },
 }
+
+// module.exports = [
+//   {
+//     type: 'select',
+//     name: 'package',
+//     message: 'Which package should this be generated in?',
+//     choices: getWorkspaces(path.resolve(__dirname, '../..')),
+//   },
+//   {
+//     type: 'input',
+//     name: 'name',
+//     message: 'Name of the new component:',
+//   },
+// ]
